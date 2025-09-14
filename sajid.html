@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Md Sajid Reza - Portfolio</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:"Segoe UI",Arial,sans-serif;}
+    body{background:#f5f7fa;color:#333;line-height:1.6;transition:all 0.3s;}
+    
+    /* Header */
+    header{
+      background:linear-gradient(135deg,#1a1a1a,#444);
+      color:#fff;text-align:center;padding:60px 20px;transition:all 0.3s;
+    }
+    header img{
+      width:150px;height:150px;border-radius:50%;
+      border:4px solid #fff;margin-bottom:20px;box-shadow:0 0 20px rgba(0,0,0,0.5);
+      transition:all 0.3s;
+    }
+    header h1{font-size:2.5rem;margin-bottom:10px;}
+    header p{font-size:1.2rem;color:#ddd;margin-bottom:15px;}
+    header button{
+      margin-top:15px;padding:8px 15px;background:#ff9800;
+      border:none;border-radius:5px;color:#fff;font-weight:bold;cursor:pointer;transition:0.3s;
+    }
+    header button:hover{background:#e68900;}
+    .social-links a{
+      margin:0 12px;color:#fff;text-decoration:none;font-size:1.3rem;transition:0.3s;
+    }
+    .social-links a:hover{color:#ff9800;}
+
+    /* Navbar */
+    nav{background:#222;display:flex;justify-content:center;flex-wrap:wrap;transition:0.3s;}
+    nav a{
+      color:#fff;text-decoration:none;padding:14px 20px;transition:0.3s;
+    }
+    nav a:hover{background:#ff9800;}
+
+    /* Sections */
+    section{padding:60px 20px;max-width:1100px;margin:auto;transition:0.3s;}
+    h2{text-align:center;font-size:2rem;margin-bottom:25px;color:#222;position:relative;transition:0.3s;}
+    h2::after{
+      content:"";width:60px;height:3px;background:#ff9800;
+      display:block;margin:10px auto;border-radius:3px;
+    }
+
+    /* Cards / Grids */
+    .skills,.projects-grid,.edu-grid,.achievements,.experience{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;
+    }
+    .card,.project-card,.edu-card,.ach-card,.exp-card{
+      background:#fff;padding:20px;border-radius:12px;
+      box-shadow:0 6px 16px rgba(0,0,0,0.1);transition:transform 0.3s, background 0.3s, color 0.3s;
+    }
+    .card:hover,.project-card:hover,.edu-card:hover,.ach-card:hover,.exp-card:hover{
+      transform:translateY(-6px);
+    }
+    .project-card img{width:80px;height:80px;display:block;margin:auto 0 15px;}
+
+    /* Resume */
+    .resume{text-align:center;}
+    .resume a{
+      display:inline-block;padding:12px 25px;background:#222;
+      color:#fff;border-radius:6px;text-decoration:none;transition:0.3s;
+    }
+    .resume a:hover{background:#ff9800;}
+
+    /* Contact */
+    .contact form{max-width:600px;margin:auto;display:flex;flex-direction:column;transition:0.3s;}
+    .contact input,.contact textarea{
+      margin:10px 0;padding:12px;border:1px solid #ccc;border-radius:6px;
+      transition:0.3s;
+    }
+    .contact button{
+      padding:12px;background:#222;color:#fff;border:none;
+      border-radius:6px;cursor:pointer;transition:0.3s;
+    }
+    .contact button:hover{background:#ff9800;}
+
+    /* Footer */
+    footer{background:#222;color:#fff;text-align:center;padding:18px;margin-top:40px;transition:0.3s;}
+
+    /* Dark Mode */
+    body.dark-mode{
+      background:#121212;color:#f5f5f5;
+    }
+    body.dark-mode header{background:linear-gradient(135deg,#111,#333);}
+    body.dark-mode nav{background:#111;}
+    body.dark-mode nav a{color:#f5f5f5;}
+    body.dark-mode nav a:hover{background:#ff9800;}
+    body.dark-mode .card,
+    body.dark-mode .project-card,
+    body.dark-mode .edu-card,
+    body.dark-mode .ach-card,
+    body.dark-mode .exp-card{
+      background:#1e1e1e;
+      box-shadow:0 4px 12px rgba(0,0,0,0.7);
+    }
+    body.dark-mode .resume a{background:#444;color:#ff9800;}
+    body.dark-mode .resume a:hover{background:#ff9800;color:#fff;}
+    body.dark-mode footer{background:#111;}
+    body.dark-mode input, body.dark-mode textarea{background:#222;color:#fff;border:1px solid #555;}
+    body.dark-mode button{background:#ff9800;color:#fff;}
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <img src="eee.jpg" alt="Profile Photo">
+    <h1>Md Sajid Reza</h1>
+    <p>B.Tech CSE (IoT) | Full Stack Developer</p>
+    <button id="toggle-dark">Dark Mode</button>
+    <div class="social-links">
+      <a href="https://github.com/mdsajidreza" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/md-sajid-reza-465956269/" target="_blank">LinkedIn</a>
+      <a href="https://www.instagram.com/sajid__raza__07?igsh=MXJoeGRkeGpjdjJ0OQ==" target="_blank">Instagram</a>
+      <a href="mailto:sajidmaunvi@gmail.com">Email</a>
+    </div>
+  </header>
+
+  <!-- Navbar -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#resume">Resume</a>
+    <a href="#education">Education</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- About -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hello! I’m Md Sajid Reza, a passionate Computer Science student specializing in IoT. 
+       I have hands-on experience in Full Stack Development and love building modern, responsive applications. 
+       I completed my internship at Prodshall as a Full-Stack Developer. Apart from coding, I love cricket, reading, and travelling.</p>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="card"><h3>Programming</h3><p>C, C++, Java, Python</p></div>
+      <div class="card"><h3>Web Development</h3><p>HTML, CSS, JavaScript, React</p></div>
+      <div class="card"><h3>Full Stack</h3><p>MERN Stack (MongoDB, Express, React, Node)</p></div>
+      <div class="card"><h3>Other</h3><p>IoT, Operating System, COA, Algorithm, DBMS,CN</p></div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <img src="Calculator.png" alt="Calculator">
+        <h3>Calculator</h3>
+        <p>A simple calculator using HTML, CSS, and JS. Helps perform basic arithmetic operations (add, subtract, multiply, divide). Demonstrates core JavaScript skills.</p>
+      </div>
+
+      <div class="project-card">
+        <img src="https://img.icons8.com/?size=512&id=13617&format=png" alt="Weather App">
+        <h3>Weather App</h3>
+        <p>Real-time weather forecasting app using API integration. Displays temperature, humidity, and condition. Shows ability to work with APIs and dynamic data.</p>
+      </div>
+
+      <div class="project-card">
+        <img src="tic tac toe.png" alt="Tic Tac Toe">
+        <h3>Tic Tac Toe</h3>
+        <p>Classic Tic-Tac-Toe game using JavaScript. Two-player interactive game demonstrating DOM manipulation and event handling skills.</p>
+      </div>
+
+      <div class="project-card">
+        <img src="https://img.icons8.com/?size=512&id=22900&format=png" alt="Simon Game">
+        <h3>Simon Game</h3>
+        <p>Memory-based Simon game using JavaScript. Enhances logic, sequence tracking, and user interaction experience.</p>
+      </div>
+
+      <div class="project-card">
+        <img src="https://img.icons8.com/?size=512&id=23216&format=png" alt="Student Management System">
+        <h3>Student Management System</h3>
+        <p>Full Stack MERN project to manage student records. Includes add, edit, delete, search functionality. Reflects real-world database management experience aligned with internship.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Resume -->
+  <section id="resume" class="resume">
+    <h2>Resume</h2>
+    <a href="https://drive.google.com/uc?export=download&id=1V7gq8ZxSBXYBUVk2zM3mti5EIu356vww" target="_blank">Download Resume</a>
+  </section>
+
+  <!-- Education -->
+  <section id="education">
+    <h2>Education</h2>
+    <div class="edu-grid">
+      <div class="edu-card"><h3>B.Tech (CSE - IoT & Cyber Security)</h3><p>Bihar Engineering University | 2021–2025</p></div>
+      <div class="edu-card"><h3>12th (Science)</h3><p>Langat Singh College, Muzaffarpur</p></div>
+      <div class="edu-card"><h3>10th</h3><p>High School Bishnupur Basudeo Sitamarhi</p></div>
+    </div>
+  </section>
+
+  <!-- Achievements -->
+  <section id="achievements">
+    <h2>Achievements</h2>
+    <div class="achievements">
+      <div class="ach-card"><h3>Cricket Award</h3><p>Received award and certificate during college cricket competitions.</p></div>
+      <div class="ach-card"><h3>Internship Certificate</h3><p>Completed Full Stack Developer internship at Prodshall.</p></div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="experience">
+      <div class="exp-card"><h3>Full Stack Developer Intern</h3>
+        <p>Prodshall Company</p>
+        <p>Worked on MERN Stack projects and contributed to responsive design, APIs, and database management.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="Your Message"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Md Sajid Reza | All Rights Reserved</p>
+  </footer>
+
+  <!-- Dark Mode JS -->
+  <script>
+    const toggle = document.getElementById('toggle-dark');
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      toggle.textContent = document.body.classList.contains('dark-mode') ? 'Light Mode' : 'Dark Mode';
+    });
+  </script>
+
+</body>
+</html>
